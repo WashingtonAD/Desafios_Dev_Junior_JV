@@ -1,0 +1,99 @@
+1 - Monte a estrutura condicional if/else para as regras abaixo e no final o que será mostrado para cada valores:
+Regras:
+- homens a partir de 65 anos, escrever APOSENTADO;
+- mulheres a partir de 60 anos, escrever APOSENTADA;
+- pessoas entre 13 que 18 anos, escrever ADOLESCENTE;
+- pessoas menores que 13 anos, escrever CRIANÇAS;
+- todos os outros, escrever ADULTO;
+
+/* COMEÇO DO MEU CÓDIGO */
+
+package br.com.idtrust.dev.junior;
+
+import java.util.Scanner;
+        
+public class DesafioTwo {
+    public static void main(String[] args){
+        int idade;
+        char sexo ;
+        boolean cont = false;
+        while (cont == false){
+            Scanner perg = new Scanner(System.in);
+            System.out.print("Digite a sua idade: ");
+            idade = Integer.parseInt(perg.nextLine());
+            System.out.print("Digite o seu Sexo: [ M / F ] ");
+            sexo = perg.nextLine().toUpperCase().charAt(0);
+            if (idade<18 && idade>13 && sexo == 'M' || sexo == 'F') {
+                System.out.println("Você ainda é ADOLECENTE!");
+                cont = true; 
+            }
+            else if (idade>=65 && sexo == 'M'){
+                cont = true;
+                System.out.println("APOSENTADO!");
+            }
+            else if (idade>=60 && sexo == 'F'){
+                cont = true;
+                System.out.println("APOSENTADA!");
+            }
+            else if (idade<13 && sexo == 'M' || sexo == 'F'){
+                cont = true;
+                System.out.println("Você ainda é Criança!");
+            }
+            else if (sexo == 'M' || sexo == 'F'){
+                cont = true;
+                System.out.println("ADULTO!");
+            }
+            else {
+                System.out.print("Algo deu errado!!");
+                System.out.println("Por favor digite novamente: ");
+            } 
+        }
+    }
+}
+
+
+2 - De acordo com o algoritmo a seguir, escolha uma das alternativas abaixo.
+
+contador :=  3
+soma  := 57
+for (contador <= 10 ) {
+	if (contador < 5 || contador == 8 ) {
+		soma := soma - contador
+    } else {
+            soma = soma + contador
+    }
+	contador++
+} 
+print(“O valor da soma é ” + soma)
+
+a) O valor da soma é 57
+b) O valor da soma é 69
+c) O valor da soma é 79
+d) O valor da soma é 93
+
+/* COMEÇO DA MINHA RESPOSTA */
+
+c) O valor da soma é 79
+
+/**/ cheguei a resposta adaptando o código da pergunta,
+     irei deixar minha adaptação do código logo abaixo /**/
+
+package br.com.idtrust.dev.junior;
+
+public class DesafioThree {
+    public static void main(String[] args){
+        
+        int contador = 3;
+        int soma = 57;
+        
+        while (contador <= 10){
+            if(contador <5 || contador == 8){
+                soma = soma - contador;
+            } else {
+                soma = soma + contador;
+            }
+            contador++;
+        }
+        System.out.println(soma);
+    }
+}
